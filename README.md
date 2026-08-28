@@ -1,5 +1,5 @@
 # Software-Defined-OFDM-Modem-with-FPGA-receiver
-This ia an implementation of a python-based OFDM modem validating an FPGA OFDM receiver design. The implementation is based off of the IEEE 808.11a standard with 64 subcarriers, a cyclic prefix of 16 samples, and QPSK modulation. It includes frame synchronization, channel estimation, and zero-forcing equalization, and supports simulation over both AWGN and multipath channels.
+This is an implementation of a python-based OFDM modem validating an FPGA OFDM receiver design. The implementation is based off of the IEEE 808.11a standard with 64 subcarriers, a cyclic prefix of 16 samples, and QPSK modulation. It includes frame synchronization, channel estimation, and zero-forcing equalization, and supports simulation over both AWGN and multipath channels.
 
 ## Software Features
 
