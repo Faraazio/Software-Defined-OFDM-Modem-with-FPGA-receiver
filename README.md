@@ -30,7 +30,7 @@ The transmitter performs the following operations:
 
 
    $$
-   \s = \frac{1}{\sqrt{2}} \left( (1 - 2b_I) + j (1 - 2b_Q) \right)
+   s = \frac{1}{\sqrt{2}} \left( (1 - 2b_I) + j (1 - 2b_Q) \right)
    $$
    
 
