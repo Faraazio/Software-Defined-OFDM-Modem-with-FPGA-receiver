@@ -55,7 +55,7 @@ The receiver implements the following synchronization and equalization blocks:
    M_{\text{STS}}[n] = \frac{\left| \sum_{m=0}^{L-1} r[n+m] \, r^*[n+m+D] \right|^2}{\left( \sum_{m=0}^{L-1} |r[n+m+D]|^2 \right)^2}
    $$
 
-   where \(D = 16\) and \(L = 16\). The first index where \(M_{\text{STS}}[n]\) exceeds a threshold (0.8) is taken as the coarse timing offset.
+   where \(D = 16\) and \(L = 16\). The first index where $M_{\text{STS}}[n]$ exceeds a threshold (0.8) is taken as the coarse timing offset.
 
 2. **Fine timing synchronization** using the LTS periodicity. An autocorrelation with delay \(D = 64\) is computed over a window around the expected LTS start. The metric is similar to the STS case but with \(D = 64\) and \(L = 64\). The plateau of this metric gives the start of the first long symbol.
 
@@ -67,7 +67,7 @@ The receiver implements the following synchronization and equalization blocks:
    \hat{H}[k] = \frac{Y_{\text{LTS}}[k]}{X_{\text{LTS}}[k]}
    $$
 
-   where \(Y_{\text{LTS}}[k]\) is the FFT of the received long symbol, and \(X_{\text{LTS}}[k]\) is the known frequency-domain long symbol.
+   where $Y_{\text{LTS}}[k]$ is the FFT of the received long symbol, and $X_{\text{LTS}}[k]$ is the known frequency-domain long symbol.
 
 5. **Data extraction and CP removal**: After synchronization, the data part is reshaped into OFDM symbols of length 80, and the first 16 samples (cyclic prefix) are discarded, leaving 64 samples per symbol.
 
@@ -79,10 +79,10 @@ The receiver implements the following synchronization and equalization blocks:
 
 7. **QPSK demapping**: The equalized symbols are converted back to bits using hard decisions:
 
-   $$
-   b_I = \begin{cases} 0, & \Re(\hat{X}) > 0 \\ 1, & \Re(\hat{X}) < 0 \end{cases}, \quad
-   b_Q = \begin{cases} 0, & \Im(\hat{X}) > 0 \\ 1, & \Im(\hat{X}) < 0 \end{cases}
-   $$
+   
+   $b_I = \begin{cases} 0, & \Re(\hat{X}) > 0 \\ 1, & \Re(\hat{X}) < 0 \end{cases}, \quad$
+   $b_Q = \begin{cases} 0, & \Im(\hat{X}) > 0 \\ 1, & \Im(\hat{X}) < 0 \end{cases}$
+   
 
 ## Channel Models
 
