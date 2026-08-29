@@ -81,10 +81,10 @@ $$
 
 7. **QPSK demapping**: The equalized symbols are converted back to bits using hard decisions:
 
-   
-   $b_I = \begin{cases} 0, & \Re(\hat{X}) > 0 \\ 1, & \Re(\hat{X}) < 0 \end{cases}, \quad$
-   $b_Q = \begin{cases} 0, & \Im(\hat{X}) > 0 \\ 1, & \Im(\hat{X}) < 0 \end{cases}$
-   
+$$
+b_I = \begin{cases} 0, & \Re(\hat{X}) > 0 \\ 1, & \Re(\hat{X}) < 0 \end{cases}, \quad
+b_Q = \begin{cases} 0, & \Im(\hat{X}) > 0 \\ 1, & \Im(\hat{X}) < 0 \end{cases}
+$$
 
 ## Channel Models
 
