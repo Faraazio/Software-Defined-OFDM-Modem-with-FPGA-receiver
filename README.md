@@ -32,7 +32,7 @@ The transmitter performs the following operations:
    s = \frac{1}{\sqrt{2}} \left( (1 - 2b_I) + j (1 - 2b_Q) \right)
    $$
 
-   where \(b_I\) and \(b_Q\) are the two bits for the symbol. This maps bits \(0\) and \(1\) to \(+\frac{1}{\sqrt{2}}\) and \(-\frac{1}{\sqrt{2}}\) respectively.
+   where $b_I$ and $b_Q$ are the two bits for the symbol. This maps bits \(0\) and \(1\) to \(+\frac{1}{\sqrt{2}}\) and \(-\frac{1}{\sqrt{2}}\) respectively.
 
 3. **Subcarrier allocation**: The 48 data symbols are placed into a 64-point frequency-domain vector at indices 1 through 48. The DC subcarrier (index 0) and guard subcarriers (indices 49–63) are set to zero.
 
