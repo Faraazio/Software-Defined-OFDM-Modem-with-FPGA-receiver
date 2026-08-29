@@ -96,7 +96,7 @@ $$
 \sigma = \sqrt{ \frac{P_{\text{signal}}}{2 \cdot 10^{\text{SNR}_{\text{dB}}/10}} }
 $$
 
-where \(P_{\text{signal}}\) is the average power of the noiseless received signal (after multipath, before noise).
+where $P_{\text{signal}}$ is the average power of the noiseless received signal (after multipath, before noise).
 
 ### Two-Tap Multipath Channel
 
