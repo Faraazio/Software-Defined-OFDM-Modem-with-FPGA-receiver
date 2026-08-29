@@ -31,7 +31,7 @@ The transmitter performs the following operations:
 
    $$
    s = \frac{1}{\sqrt{2}} \left( (1 - 2b_I) + j (1 - 2b_Q) \right)
-   $$
+   $$.
 
    where $b_I$ and $b_Q$ are the two bits for the symbol. This maps bits $0$ and $1$ to $+\frac{1}{\sqrt{2}}$ and $-\frac{1}{\sqrt{2}}$ respectively.
 
