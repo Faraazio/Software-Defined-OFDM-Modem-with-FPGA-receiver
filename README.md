@@ -51,9 +51,9 @@ The receiver implements the following synchronization and equalization blocks:
 
 1. **Coarse timing synchronization** using the STS periodicity. The received signal is autocorrelated with a delay equal to the short symbol length (16 samples) and a sliding window of length 16. The timing metric is defined as:
 
-   \[
+   $$
    M_{\text{STS}}[n] = \frac{\left| \sum_{m=0}^{L-1} r[n+m] \, r^*[n+m+D] \right|^2}{\left( \sum_{m=0}^{L-1} |r[n+m+D]|^2 \right)^2}
-   \]
+   $$
 
    where \(D = 16\) and \(L = 16\). The first index where \(M_{\text{STS}}[n]\) exceeds a threshold (0.8) is taken as the coarse timing offset.
 
@@ -63,9 +63,9 @@ The receiver implements the following synchronization and equalization blocks:
 
 4. **Channel estimation using the LTS**. After fine timing, the receiver extracts one 64-sample long symbol (or averages both) and performs an FFT. The channel frequency response is estimated by dividing the received frequency-domain signal by the known transmitted long symbol values:
 
-   \[
+   $$
    \hat{H}[k] = \frac{Y_{\text{LTS}}[k]}{X_{\text{LTS}}[k]}
-   \]
+   $$
 
    where \(Y_{\text{LTS}}[k]\) is the FFT of the received long symbol, and \(X_{\text{LTS}}[k]\) is the known frequency-domain long symbol.
 
@@ -73,16 +73,16 @@ The receiver implements the following synchronization and equalization blocks:
 
 6. **FFT and equalization**: Each data symbol is transformed to frequency domain via FFT. Zero-forcing equalization is performed by dividing by the estimated channel:
 
-   \[
+   $$
    \hat{X}[k] = \frac{Y[k]}{\hat{H}[k]}
-   \]
+   $$
 
 7. **QPSK demapping**: The equalized symbols are converted back to bits using hard decisions:
 
-   \[
+   $$
    b_I = \begin{cases} 0, & \Re(\hat{X}) > 0 \\ 1, & \Re(\hat{X}) < 0 \end{cases}, \quad
    b_Q = \begin{cases} 0, & \Im(\hat{X}) > 0 \\ 1, & \Im(\hat{X}) < 0 \end{cases}
-   \]
+   $$
 
 ## Channel Models
 
@@ -90,9 +90,9 @@ The receiver implements the following synchronization and equalization blocks:
 
 Additive white Gaussian noise is added to the received time-domain signal according to the specified SNR. For a complex baseband signal, the noise standard deviation is:
 
-\[
+$$
 \sigma = \sqrt{ \frac{P_{\text{signal}}}{2 \cdot 10^{\text{SNR}_{\text{dB}}/10}} }
-\]
+$$
 
 where \(P_{\text{signal}}\) is the average power of the noiseless received signal (after multipath, before noise).
 
@@ -100,15 +100,15 @@ where \(P_{\text{signal}}\) is the average power of the noiseless received signa
 
 The multipath channel is modeled as a linear convolution with a two-tap impulse response:
 
-\[
+$$
 h[n] = \delta[n] + a \cdot \delta[n - d]
-\]
+$$
 
 where \(a\) is the gain of the delayed path (e.g., 0.5) and \(d\) is the delay in samples (e.g., 10). The channel output is:
 
-\[
+$$
 y[n] = x[n] + a \cdot x[n-d]
-\]
+$$
 
 This channel is static and the delay is less than the cyclic prefix length, preserving subcarrier orthogonality after CP removal.
 
